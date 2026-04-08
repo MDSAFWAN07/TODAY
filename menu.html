@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section style="padding:40px;">
+    <h2 id="restaurantName">Menu</h2>
+    <p>Menu items will appear here</p>
+</section>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const restaurantId = params.get("id");
+
+    document.getElementById("restaurantName").innerText =
+        "Menu for Restaurant ID: " + restaurantId;
+</script>
+
+</body>
+</html>

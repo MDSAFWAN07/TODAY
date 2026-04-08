@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foodie | Order Food Online</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h1 class="logo">Foodie</h1>
+    <div class="nav-right">
+        <button class="cart-btn">🛒 Cart</button>
+        <button id="loginBtn" class="login-btn">Login</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-animate"></div>
+    <h2>Delicious food delivered to your door 🛵</h2>
+    <p>Order your favourite dishes</p>
+     <div class="hero-search">
+        <input id="searchInput" type="text" placeholder="Search food...">
+    </div>
+    <div class="category-tabs">
+        <button class="cat-tab" data-category="Breakfast">Breakfast</button>
+        <button class="cat-tab" data-category="Lunch">Lunch</button>
+        <button class="cat-tab" data-category="Snacks">Snacks</button>
+        <button class="cat-tab" data-category="Dinner">Dinner</button>
+    </div>
+</section>
+
+<!-- CONTENT -->
+<section class="restaurant-section">
+    <h2>Choose your Cravings</h2>
+
+    <h3 id="breakfast-heading">Breakfast</h3>
+    <div class="restaurant-grid" data-category="Breakfast"></div>
+
+    <h3 id="lunch-heading">Lunch</h3>
+    <div class="restaurant-grid" data-category="Lunch"></div>
+
+    <h3 id="snacks-heading">Snacks</h3>
+    <div class="restaurant-grid" data-category="Snacks"></div>
+
+    <h3 id="dinner-heading">Dinner</h3>
+    <div class="restaurant-grid" data-category="Dinner"></div>
+</section>
+
+<!-- Cart panel (hidden until used) -->
+<div id="cartPanel" class="cart-panel" aria-hidden="true">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button id="closeCart">✕</button>
+    </div>
+    <div id="cartList" class="cart-list"></div>
+    <div class="cart-footer">
+        <div class="cart-total">Total: <span id="cartTotal">0</span></div>
+        <button id="placeOrder" class="order-btn">Order Selected</button>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+
+<!-- Login modal -->
+<div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+        <div class="modal-content">
+            <button id="closeLoginBtn" class="modal-close" aria-label="Close">✕</button>
+            <h3 id="loginTitle">Sign In</h3>
+            <form id="loginForm">
+                <p><label for="loginName">Name</label>
+                <input id="loginName" name="name" type="text" required placeholder="Your name">
+                    </p>
+                <p><label for="loginEmail">Email</label>
+                <input id="loginEmail" name="email" type="email" required placeholder="you@example.com">
+                    </p>
+                <div class="modal-actions">
+                    <button type="submit" class="order-btn">Login</button>
+                    <button type="button" id="cancelLogin" class="cart-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
